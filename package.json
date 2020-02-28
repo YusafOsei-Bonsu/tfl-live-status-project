@@ -30,5 +30,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/register": "^7.8.6",
+    "babel-cli": "^6.26.0",
+    "babel-preset-react-app": "^9.1.1",
+    "cross-env": "^7.0.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "jasmine": "^3.5.0",
+    "jasmine-enzyme": "^7.1.2",
+    "jsdom": "^16.2.0"
   }
 }

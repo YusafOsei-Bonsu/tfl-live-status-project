@@ -1,11 +1,18 @@
-const React = require('react');
-const { shallow } = require('enzyme');
-const { render } = require("@testing-library/react");
-const { App } = require('../containers/App');
+/* eslint-disable no-unused-vars */
+import React from 'react';
+import jasmineEnzyme from 'jasmine-enzyme';
+import { mount, shallow, render } from 'enzyme';
+const App = require('../containers/App');
 
 describe('App component', () => {
-  it('Should render a <div />', () => {
-    const wrapper = shallow(<App />);
-    expect(wrapper.find('div').length).toEqual(1);
+  let wrapper;
+
+  beforeEach(() => {
+    jasmineEnzyme()
+    wrapper = render(<App />);
   });
+
+  it('Should render the title', () => {
+    expect(wrapper).toContainMatchingElement('h1');
+  })
 });

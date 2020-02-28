@@ -1,3 +1,7 @@
+#map {
+    border: 2px solid rgb(0, 0, 255);
+  }
+
 #map img {
     width: 800px;
 }

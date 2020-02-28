@@ -1,9 +1,11 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+const React = require('react');
+const { shallow } = require('enzyme');
+const { render } = require("@testing-library/react");
+const { App } = require('../containers/App');
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('App component', () => {
+  it('Should render a <div />', () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.find('div').length).toEqual(1);
+  });
 });

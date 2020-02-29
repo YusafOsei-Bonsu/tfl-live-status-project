@@ -5,7 +5,7 @@ import "../styles/CentralTubeMap.css";
 const CentralTubeMap = () => {
     return (
         <div id="map">
-            <img src="assets/central-tube-map.jpg" alt="A tube map of central London" />
+            <img src="assets/tube-map.jpg" alt="A tube map of central London" />
         </div>
     );
 }

@@ -13,7 +13,7 @@ class TflLine extends React.Component {
                     {/* If the status reason exists, display it */}
                     {reason ? <p>{ reason }</p> : <p>{ name } Line is experiencing a good service today. Have a nice day :)</p>}
                 </div> 
-                <div class="card-footer"><br /></div>
+                <div class="card-footer"><h5>Last Updated: </h5></div>
             </div>
         );
     }

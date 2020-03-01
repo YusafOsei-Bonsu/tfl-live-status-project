@@ -1,0 +1,10 @@
+div[class="card"] {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 400px;
+}
+
+div[class="card-header"] {
+    color: rgb(255, 255, 255);
+    text-align: center;
+}

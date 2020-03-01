@@ -11,7 +11,7 @@ class TflLine extends React.Component {
                 <div class="card-body">
                     <h5>{ status }</h5>
                     {/* If the status reason exists, display it */}
-                    <p>{reason && reason}</p>
+                    {reason ? <p>{reason}</p> : <p>{name} Line is experiencing a good service today. Have a nice day :)</p>}
                 </div> 
                 <div class="card-footer"><br /></div>
             </div>

@@ -1,6 +1,10 @@
 # Tfl Service Line Status Project
 This project focuses on the development of a React application that displays the status of each Tfl service line (except for Tfl Rail).
 
+## User Stories
+- As a user, I want to see the status of each Tfl line to see if the line is.
+- As a user, I want each line to possess its own colour.
+
 ## Technologies
 - ReactJS, including HTML/JSX and CSS.
 - Jasmine (for testing).

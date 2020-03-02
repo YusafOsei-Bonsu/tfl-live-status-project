@@ -13,7 +13,7 @@ class TflLine extends React.Component {
                     {/* If the status reason exists, display it */}
                     {reason && <p>{ reason }</p>}
                 </div> 
-                <div class="card-footer"><h5>Last Updated: </h5></div>
+                <div class="card-footer"><br /></div>
             </div>
         );
     }

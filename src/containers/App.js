@@ -38,11 +38,13 @@ class App extends React.Component {
           // Color of tfl service line
           let color = { backgroundColor: tflLineColour[line.id] }
           return (
-            <TflLine 
+            <TflLine
+              key={line.id}
               name={line.name} 
               color={color} 
               status={line.lineStatuses[0]["statusSeverityDescription"]}
-              reason={line.lineStatuses[0]["reason"]} />
+              reason={line.lineStatuses[0]["reason"]} 
+              timestamp={line.lineStatuses[0]["validityPeriods"][0]} />
             );
         })}
         </div>

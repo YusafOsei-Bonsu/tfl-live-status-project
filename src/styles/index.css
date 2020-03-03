@@ -1,4 +1,8 @@
 body {
     margin: 0;
-    background-image: url('../assets/tube-map.jpg');
+    background: url('../assets/tube-map.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }

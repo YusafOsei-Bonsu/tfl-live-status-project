@@ -1,18 +1,12 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import jasmineEnzyme from 'jasmine-enzyme';
-import { mount, shallow, render } from 'enzyme';
-const App = require('../containers/App');
+import { shallow } from 'enzyme';
+import App from '../containers/App';
 
-describe('App component', () => {
-  let wrapper;
+describe('App', () => {
 
-  beforeEach(() => {
-    jasmineEnzyme()
-    wrapper = render(<App />);
-  });
-
-  it('Should render the title', () => {
-    expect(wrapper).toContainMatchingElement('h1');
+  it('Should render 2 divs', () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.find('div').length).toEqual(2);
   })
 });

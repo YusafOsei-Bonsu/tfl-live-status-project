@@ -2,6 +2,11 @@
   "name": "tfl-react-app",
   "version": "0.1.0",
   "private": true,
+  "main": "server.js",
+  "engines": {
+    "npm": "6.14.1",
+    "node": "12.13.0"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.1",
@@ -12,7 +17,8 @@
     "react-scripts": "3.4.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "heroku-postbuild": "npm install",
+    "start": "node server.js",
     "build": "react-scripts build",
     "test": "cross-env NODE_ENV=test jasmine",
     "eject": "react-scripts eject"
@@ -37,10 +43,12 @@
     "@babel/register": "^7.8.6",
     "babel-cli": "^6.26.0",
     "babel-preset-react-app": "^9.1.1",
+    "body-parser": "^1.19.0",
     "cross-env": "^7.0.0",
     "dotenv": "^8.2.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
+    "express": "^4.17.1",
     "ignore-styles": "^5.0.1",
     "jasmine": "^3.5.0",
     "jasmine-enzyme": "^7.1.2",

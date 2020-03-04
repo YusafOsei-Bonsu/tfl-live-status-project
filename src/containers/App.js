@@ -5,6 +5,8 @@ import Axios from 'axios';
 import '../styles/App.css';
 
 class App extends React.Component {
+  intervalID;
+
   constructor(props) {
     super(props);
     this.state = {
@@ -16,14 +18,26 @@ class App extends React.Component {
     }
   }
 
-  // Getting all Tfl service lines and their line statuses
-  componentDidMount() {
+  // Get the statuses of each Tfl line
+  getData = () => {
     const appId = process.env.REACT_APP_ID;
     const appKey = process.env.REACT_APP_KEY;
     Axios.get(`https://api.tfl.gov.uk/Line/Mode/tube%2Cdlr%2Coverground%2Ctram/Status?app_id=${appId}&app_key=${appKey}`)
     .then(res => {
       this.setState({ tflLines: res.data });
+      // Every 10secs, refresh the page
+      this.intervalID = setTimeout(this.getData.bind(this), 10000);
     }).catch(err => console.log(err));
+  }
+
+  // Getting all Tfl service lines and their line statuses
+  componentDidMount() {
+    this.getData();
+  }
+
+  // stop getData() from continuing to run even after unmounting this component.
+  componentWillUnmount() {
+    clearTimeout(this.intervalID);
   }
 
   render() {

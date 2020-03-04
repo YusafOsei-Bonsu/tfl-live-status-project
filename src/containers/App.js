@@ -35,13 +35,12 @@ class App extends React.Component {
     this.getData();
   }
 
-  // stop getData() from continuing to run even after unmounting this component.
+  // stop refreshing and making API calls after the component is destroyed.
   componentWillUnmount() {
     clearTimeout(this.intervalID);
   }
 
   render() {
-    // Deconstructing state
     let { tflLines, tflLineColour } = this.state;
 
     return (

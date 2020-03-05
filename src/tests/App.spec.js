@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import { shallow } from 'enzyme';
-import App from '../containers/App';
+import { shallow, render, mount } from 'enzyme';
+import App, { getData } from '../containers/App';
 import TflHeader from '../components/TflHeader';
 import Axios from 'axios';
 
@@ -15,19 +15,26 @@ describe('App', () => {
 });
 
   // Tests if the TflHeader instance gets rendered
-  test('should render the TflHeader instance', () => {
+  test('Should render the TflHeader instance', () => {
     wrapper = shallow(<App />);
     expect(wrapper.containsMatchingElement(<TflHeader />)).toBeTruthy();
   });
   
-  // Tests if the API call gets data about all Tfl lines
-  test('should return data about all Tfl lines', () => {
+  // Tests if the component's state gets loaded
+  test("Should load the component's state", async () => {
+    wrapper = shallow(<App />);
+    await wrapper.instance().componentDidMount();
+    expect(wrapper.state('tflLines')).toBeTruthy();
+    expect(wrapper.state('tflLineColour')).toBeTruthy();
+  });
+
+  // Tests if the API Call gets the tfl line statuses
+  test('should should return data about each Tfl line service', () => {
     const appId = process.env.REACT_APP_ID;
     const appKey = process.env.REACT_APP_KEY;
     Axios.get(`https://api.tfl.gov.uk/Line/Mode/tube%2Cdlr%2Coverground%2Ctram/Status?app_id=${appId}&app_key=${appKey}`)
     .then(res => {
-      expect((res.data).length).toEqual(14);
+      expect(res.data).toHaveLength(14)
     }).catch(err => console.log(err));
   });
-  
 });

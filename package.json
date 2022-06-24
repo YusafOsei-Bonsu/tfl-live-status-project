@@ -51,7 +51,7 @@
     "express": "^4.17.1",
     "ignore-styles": "^5.0.1",
     "jest-spec-reporter": "^1.0.12",
-    "jsdom": "^16.2.0"
+    "jsdom": "^16.5.0"
   },
   "babel": {
     "presets": [
